@@ -1,0 +1,7 @@
+{
+  "schema": "ECOM_OS_RESEARCH_POLICY_V1",
+  "observable_prices_allowed": true,
+  "observable_prices_note": "Autorisé par le propriétaire le 2026-10-21 : consultation et enregistrement EN LECTURE SEULE des prix publics observables des concurrents, avec source et date, uniquement via des observations PRICE_OBSERVED vérifiées par le moteur sur la page. Jamais d'achat, de coût fournisseur, de marge, de CAC, de chiffre d'affaires ni de rentabilité inventés.",
+  "purchase_recurrence_hard_filter_at_gate4": false,
+  "purchase_recurrence_note": "Consigne propriétaire du 2026-10-21 : la récurrence d'achat est un avantage évalué (axe Gamme/LTV du score), jamais un veto automatique contre les produits durables."
+}

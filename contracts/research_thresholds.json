@@ -1,0 +1,89 @@
+{
+  "schema": "ECOM_OS_RESEARCH_THRESHOLDS_V2",
+  "status": "OWNER_AUTHORIZED_2026-10-21",
+  "note": "Paramètres de calibrage des niveaux de preuve (consigne propriétaire du 2026-10-21). Ce ne sont pas des validations commerciales : chaque niveau exige aussi diversité, indépendance, persistance et faible concentration. Le plancher HARD_FLOOR_DISTINCT_PERSONS = 6 est codé dans engine/demand.py.",
+  "levels": {
+    "corroborated": {
+      "min_independent_domains": 3,
+      "min_source_kinds": 2,
+      "min_distinct_testimonies": 10
+    },
+    "broad_distributed": {
+      "min_independent_domains": 10,
+      "min_source_kinds": 3,
+      "max_domain_share": 0.35,
+      "min_years_spanned": 2,
+      "min_contexts": 3,
+      "min_distinct_testimonies": 100
+    },
+    "significant_testimony_path": {
+      "min_independent_domains": 20,
+      "note": "Exige aussi la démonstration de l'ampleur FRANÇAISE (bloc fr_market).",
+      "min_distinct_testimonies": 1000
+    },
+    "significant_statistic_path": {
+      "requires_verified_applicable_fr_statistic": true,
+      "plus_level": "corroborated"
+    },
+    "note": "Seuils exprimés en TÉMOIGNAGES DISTINCTS (auteurs identifiés fusionnés + contributions non attribuées indépendantes, copies retirées) ; l'identité des internautes n'est jamais requise."
+  },
+  "investigation": {
+    "saturation_batches": 3,
+    "saturation_new_author_share": 0.05,
+    "recent_months": 24
+  },
+  "persona_fit": {
+    "demonstrated_min_match_accounts": 5,
+    "demonstrated_min_match_share_of_declared": 0.5,
+    "out_of_target_min_accounts": 3,
+    "note": "Utilisé seulement dans les missions où le propriétaire impose explicitement un profil (ex. PERSONA_A_FR) ; une statistique vérifiée applicable au segment peut aussi démontrer le fit."
+  },
+  "segment_emergence": {
+    "min_declaring_authors": 10,
+    "min_share_of_declaring": 0.4
+  },
+  "score_caps_by_level": {
+    "HYPOTHESIS_DETECTED": 1,
+    "PROBLEM_CORROBORATED": 2,
+    "BROAD_DISTRIBUTED_SIGNAL": 3,
+    "SIGNIFICANT_MARKET_DOCUMENTED": 4,
+    "SIGNIFICANT_MARKET_BOTH_PATHS": 5
+  },
+  "market_depth_caps_by_index_count": [
+    [
+      1,
+      1
+    ],
+    [
+      50,
+      2
+    ],
+    [
+      200,
+      3
+    ],
+    [
+      1000,
+      4
+    ],
+    [
+      5000,
+      5
+    ]
+  ],
+  "agent02": {
+    "min_fr_queries": 5,
+    "min_invalidation_attempts": 2,
+    "requires_satisfaction_review_analysis": true,
+    "requires_price_observation_or_explicit_absence": true,
+    "well_solved_satisfaction_ratio": 1.0
+  },
+  "fr_market": {
+    "testimony_min_fr_anchored": 300,
+    "testimony_min_fr_residence": 50,
+    "testimony_min_fr_domains": 10,
+    "min_fr_anchored_share": 0.3,
+    "statistic_min_fr_anchored": 10,
+    "note": "Témoignages « ancrés FR » = résidence française déclarée + sites marchands FR / domaines .fr (résidence non prouvée). Voie témoignages : ≥ 300 témoignages ancrés FR dont ≥ 50 avec résidence déclarée, ≥ 10 domaines FR indépendants, ≥ 30 % du total. Voie statistique : statistique française VÉRIFIÉE par le moteur + ≥ 10 témoignages ancrés FR. Pays inconnu et international : signaux utiles, jamais suffisants seuls."
+  }
+}

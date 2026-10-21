@@ -1,0 +1,169 @@
+{
+  "schema": "ECOM_OS_PERSONA_PROFILE_V1",
+  "persona_id": "PERSONA_A_FR",
+  "label": "Persona_A",
+  "source": "Profil d'exemple fictif fourni avec le framework (à remplacer par votre propre profil).",
+  "status": "EXAMPLE_PROFILE",
+  "imposed_by_mission": {
+    "gender": "femme",
+    "age_min": 42,
+    "age_max": 55,
+    "country": "FR",
+    "buys_online": true,
+    "sensitivities": [
+      "bénéfices concrets",
+      "qualité",
+      "preuves",
+      "rapport valeur/prix"
+    ],
+    "tone_rules": [
+      "ton respectueux",
+      "langage réel français"
+    ]
+  },
+  "possible_not_universal": [
+    "enfants",
+    "conjoint",
+    "maison ou appartement",
+    "animal",
+    "voiture",
+    "travail salarié",
+    "loisirs",
+    "proche aidante d'un parent vieillissant",
+    "charge mentale du foyer",
+    "reprise du sport ou d'une activité",
+    "achat d'occasion",
+    "recherche de promotions et comparaison des vendeurs",
+    "ménopause ou périménopause"
+  ],
+  "forbidden_universal_assumptions": [
+    "Persona_A a forcément des enfants",
+    "Persona_A possède forcément un animal",
+    "Persona_A a forcément une maison ou un jardin"
+  ],
+  "life_zones": [
+    "maison",
+    "cuisine",
+    "nettoyage",
+    "animaux",
+    "voiture",
+    "jardin",
+    "vetements",
+    "beaute",
+    "sante_bien_etre",
+    "voyages",
+    "travail",
+    "organisation",
+    "sommeil_confort",
+    "loisirs",
+    "couple",
+    "enfants_famille",
+    "proche_aidante",
+    "sport",
+    "apparence_age",
+    "budget_achats"
+  ],
+  "conditional_attribute_keywords": {
+    "possede_un_animal": [
+      "chat",
+      "chien",
+      "animal",
+      "litière",
+      "croquettes",
+      "poules",
+      "poulailler",
+      "aquarium"
+    ],
+    "a_des_enfants": [
+      "enfant",
+      "enfants",
+      "bébé",
+      "scolaire",
+      "ado",
+      "adolescent"
+    ],
+    "maison_avec_exterieur": [
+      "jardin",
+      "allée",
+      "terrasse",
+      "piscine",
+      "bassin",
+      "pelouse",
+      "puits",
+      "maison individuelle"
+    ],
+    "menopause_perimenopause": [
+      "ménopause",
+      "périménopause",
+      "bouffées de chaleur"
+    ],
+    "possede_une_voiture": [
+      "voiture",
+      "véhicule"
+    ],
+    "condition_de_sante": [
+      "maladie",
+      "incontinence",
+      "douleur chronique",
+      "pathologie"
+    ]
+  },
+  "persona_evidence": {
+    "age_patterns": [
+      "j'ai (\\d{2}) ans",
+      "j ai (\\d{2}) ans",
+      "âgée de (\\d{2}) ans",
+      "agée de (\\d{2}) ans",
+      "moi (\\d{2}) ans",
+      "j'aurai (\\d{2}) ans",
+      "du haut de mes (\\d{2}) ans"
+    ],
+    "age_range_phrases": {
+      "la cinquantaine": [
+        50,
+        59
+      ],
+      "quinquagénaire": [
+        50,
+        59
+      ],
+      "la quarantaine": [
+        40,
+        49
+      ]
+    },
+    "female_self_declared": [
+      "je suis une femme",
+      "en tant que femme",
+      "maman de",
+      "je suis maman",
+      "mère de",
+      "grand-mère",
+      "mamie de",
+      "ma ménopause",
+      "je suis ménopausée"
+    ],
+    "female_linguistic_cues": [
+      "mon mari",
+      "je suis déçue",
+      "très déçue",
+      "je suis ravie",
+      "je suis contente",
+      "je suis satisfaite",
+      "je suis obligée",
+      "je suis épuisée",
+      "je suis allée",
+      "je suis habituée",
+      "je suis convaincue"
+    ],
+    "male_self_declared": [
+      "je suis un homme",
+      "ma femme",
+      "mon épouse",
+      "je suis papa",
+      "père de"
+    ],
+    "note": "Une déclaration doit figurer dans le bloc de l'auteur (vérification moteur). Un indice linguistique féminin seul n'est qu'un indice PARTIEL. « mon mari » est un indice déclaré mais non exclusif ; jamais d'inférence depuis un prénom ou un pseudo."
+  },
+  "fit_thresholds_status": "PROPOSED_PENDING_OWNER_APPROVAL (contracts/research_thresholds.json)"
+}

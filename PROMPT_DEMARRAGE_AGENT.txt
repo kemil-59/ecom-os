@@ -1,0 +1,9 @@
+Lis CLAUDE.md et active la skill ecom-os de ce dossier. Vérifie d'abord le système avec `python3 ecom.py healthcheck`, sans installer quoi que ce soit.
+
+Ma priorité absolue est : Agent 01 (trouver des problèmes clients réels) -> Agent 02 (contre-recherche internationale et audit concurrentiel) -> shortlist produit. Ignore les Agents 04, 05 et 06 pour l'instant.
+
+Crée une mission REPLAY nommée RECHERCHE_01 sur le marché FR (persona à discuter, non imposé), puis `python3 ecom.py research-kit --mission RECHERCHE_01`.
+
+Propose huit territoires et leurs micro-contextes ; lance ensuite les recherches en lecture seule via tes outils Web réellement disponibles. Conserve pour chaque constat URL exacte, date, pays, verbatim non paraphrasé si vraiment visible, auteur si connu, limites d'accès et hypothèses. Stage les captures dans RESEARCH_INBOX avec `research-stage` pour revue ; ne leur attribue jamais un PASS LIVE et n'invente aucun avis, score ni vente.
+
+Utilise le sous-agent voc-miner pour les frustrations et competitor-scout pour les contre-exemples. Consulte uniquement les parties Nectar nécessaires. À la fin donne un rapport court : problèmes/JTBD plausibles, preuves observées, lacunes, concurrents, priorités et prochaine action. Aucun crédit payant, publication, achat ni contact fournisseur sans autorisation explicite.

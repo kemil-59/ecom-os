@@ -1,0 +1,111 @@
+{
+  "schema_version": "ECOM_OS_CLEAN_B1_CONTRACTS",
+  "contracts": {
+    "MissionConfig": {
+      "required": [
+        "mission_id",
+        "target_sale_market",
+        "persona",
+        "foreign_research_markets",
+        "mode"
+      ],
+      "defaults": {
+        "target_sale_market": "FR",
+        "persona": "Persona_A",
+        "foreign_research_markets": [
+          "US",
+          "GB",
+          "CA",
+          "AU"
+        ],
+        "mode": "REPLAY"
+      }
+    },
+    "LedgerObservation": {
+      "required": [
+        "territory_id",
+        "probleme",
+        "phrase_exacte",
+        "source_type",
+        "source_url"
+      ],
+      "optional": [
+        "author_key",
+        "kind",
+        "incumbent",
+        "dimension",
+        "satisfied_dimension",
+        "candidate_ids",
+        "method_id",
+        "inferred",
+        "evidence_type"
+      ]
+    },
+    "MarketScore40": {
+      "axes": [
+        "persona_fit",
+        "frequency",
+        "intensity",
+        "existing_spend",
+        "dissatisfaction",
+        "market_depth",
+        "creative_demonstrability",
+        "range_ltv"
+      ],
+      "range_per_axis": [
+        0,
+        5
+      ],
+      "shortlist_threshold": 28
+    },
+    "ResearchScore40": {
+      "mode": "FETCH_VERIFIED",
+      "axes": [
+        "persona_fit",
+        "frequency",
+        "intensity",
+        "dissatisfaction",
+        "solution_adoption",
+        "purchase_recurrence",
+        "market_depth",
+        "creative_demonstrability"
+      ],
+      "range_per_axis": [
+        0,
+        5
+      ],
+      "shortlist_threshold": 28,
+      "financial_inputs": "NONE",
+      "gate4_requires": [
+        "GATE_2B_PASS",
+        "SCORE_WITH_ADMISSIBLE_EVIDENCE",
+        "PURCHASE_RECURRENCE_DOCUMENTED"
+      ]
+    },
+    "Agent02Audit": {
+      "phases": [
+        "INTAKE",
+        "FR_BASELINE",
+        "BIG_FOUR_SCOUT",
+        "FUNNEL_DEEP_DIVE",
+        "GAP_FORMULATION",
+        "FR_COUNTEREXAMPLE",
+        "TRANSFERABILITY",
+        "HANDOFF"
+      ],
+      "requires_non_empty_evidence_and_gaps": true,
+      "binds_solution_fingerprint": true
+    },
+    "AuthorizationScope": {
+      "hash_fields": [
+        "mission_id",
+        "candidate_id",
+        "solution_id",
+        "provider",
+        "cost_class",
+        "max_amount",
+        "currency"
+      ]
+    }
+  }
+}

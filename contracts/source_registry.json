@@ -1,0 +1,66 @@
+{
+  "schema": "ECOM_OS_SOURCE_REGISTRY_V1",
+  "note": "Adaptateurs d'extraction de haute confiance (niveau ADAPTER). Ce n'est PAS une liste d'admission : tout site public accessible est vérifiable par la méthode générique (engine/web_capture.py). Activation d'un adaptateur = revue propriétaire ; propositions dans research/source_proposals/.",
+  "families_note": "L'indépendance des sources est mesurée par domaine enregistrable et type de source (engine/demand.py), plus par ces familles.",
+  "sources": [
+    {
+      "host": "www.forumconstruire.com",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "FORUM_FR",
+      "geo": "RESIDENCE_ONLY",
+      "header": "(?P<author>[^\\s]+) (?:Auteur du sujet )?Le (?P<date>\\d\\d/\\d\\d/\\d{4}) à \\d\\dh\\d\\d"
+    },
+    {
+      "host": "forums.futura-sciences.com",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "FORUM_FR",
+      "geo": "RESIDENCE_ONLY",
+      "header": "(?P<date>\\d\\d/\\d\\d/\\d{4}), \\d\\dh\\d\\d #\\d+ (?P<author>\\S+) Date d'inscription"
+    },
+    {
+      "host": "droit-finances.commentcamarche.com",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "FORUM_FR",
+      "geo": "RESIDENCE_ONLY",
+      "header": "(?P<author>[^\\s]+) - (?:Dernière réponse|Modifié) le"
+    },
+    {
+      "host": "sav.darty.com",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "QA_SITE_FR",
+      "geo": "MARKET_SITE",
+      "solicited": true,
+      "market_requires_extra": true,
+      "header": "(?P<author>\\S+) (?P<extra>Propriétaire certifié)? ?Cet utilisateur .{0,260}?Le (?P<date>\\d{1,2} \\w+ \\d{4})"
+    },
+    {
+      "host": "www.zooplus.fr",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "RETAILER_REVIEW_FR",
+      "geo": "MARKET_SITE",
+      "author_prefix": true,
+      "header": "(?P<date>\\d\\d/\\d\\d/\\d\\d) \\| (?P<author>[^|]+?) (?=\\d\\.\\d This is a stars|\\| )"
+    },
+    {
+      "host": "www.auchan.fr",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "RETAILER_REVIEW_FR",
+      "geo": "MARKET_SITE",
+      "header": "(?P<author>[^\\s.]+(?: [^\\s.]{1,2}\\.)?) (?:(?:ne )?recommande (?:pas )?ce produit\\. )?Publié le (?P<date>\\d\\d/\\d\\d/\\d\\d)(?: sur (?P<extra>.+?))? \\d(?:\\.\\d)? /5"
+    },
+    {
+      "host": "www.consoglobe.com",
+      "status": "ACTIVE",
+      "activated": "historique (avant INTEL_V2)",
+      "source_type": "BLOG_COMMENT_FR",
+      "geo": "RESIDENCE_ONLY",
+      "header": "(?P<author>\\S+) dit : (?P<date>\\d{1,2} \\w+ \\d{4})"
+    }
+  ]
+}
