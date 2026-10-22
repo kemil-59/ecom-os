@@ -12,7 +12,7 @@ Instead of relying on unverified LLM outputs or fragmented SaaS plugins, Ecom OS
 ## 🚀 Key Features
 
 * **Evidence-Driven Engine:** Deterministic verification (`web_capture.py`, `scoring.py`) ensuring LLM outputs are backed by verifiable web quotes and data.
-* **Contract & Schema Validation:** Strict policy and threshold enforcement via standardized JSON contracts.
+* **Contract & Schema Validation:** Strict policy and threshold enforcement via standardized JSON contracts (`contracts/`).
 * **Autonomous Research & VOC Mining:** Built-in pipelines for product discovery, competitor intelligence, and persona modeling.
 * **Zero-Dependency Core:** Pure Python 3.11+ architecture backed by a comprehensive 239-unit-test suite.
 
@@ -26,6 +26,25 @@ Instead of relying on unverified LLM outputs or fragmented SaaS plugins, Ecom OS
 
 ## ⚡ Quick Start
 
-```bash
-# Run the verification test suite (239 tests)
-python3 ecom.py test
+Run the verification test suite (239 passing tests, zero external dependencies required):
+
+    python3 ecom.py test
+
+Run the autonomous research & validation pipeline:
+
+    python3 ecom.py --help
+
+## 🤝 Contributing & Roadmap
+
+We recently transitioned Ecom OS from an internal production system into a public open-source repository to empower independent developers and merchants.
+
+**Current Roadmap:**
+- [ ] Port autonomous agent adapters (`autonomous_research.py`, `downstream_agents.py`) to native OpenAI / Codex tool-calling schemas.
+- [ ] Implement automated PR security checks and SSRF/scraper auditing via OpenAI Codex Security.
+- [ ] Expand English documentation and community plugin templates.
+
+Pull requests, bug reports, and feature discussions are welcome in the **Issues** tab!
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
