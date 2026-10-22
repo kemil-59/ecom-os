@@ -1,36 +1,31 @@
 # ⚡ Ecom OS — Open-Source AI E-Commerce Operating System
 
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)
+![Tests](https://img.shields.io/badge/Tests-239_Passing-brightgreen.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Status: Beta](https://img.shields.io/badge/Status-Public_Beta-orange.svg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-**Ecom OS** is an open-source, modular framework designed to help developers and merchants automate core e-commerce operations using LLMs and autonomous workflows. 
+**Ecom OS** is an open-source, zero-dependency Python framework for evidence-driven e-commerce research, validation, and autonomous workflows.
 
-Instead of relying on fragmented, expensive SaaS plugins, Ecom OS provides a unified architecture for product catalog enrichment, conversion rate optimization (CRO) pipelines, automated customer support triage, and creative asset workflows.
+Instead of relying on unverified LLM outputs or fragmented SaaS plugins, Ecom OS pairs autonomous research agents with a deterministic verification engine. Every LLM proposal is validated against live DOM captures, cryptographic hashes, and strict JSON schemas before execution.
 
 ## 🚀 Key Features
 
-* **Modular AI Pipelines:** Pre-built connectors and structured prompts for automated product data structuring and copywriting.
-* **Headless Storefront Ready:** Built to integrate seamlessly with modern e-commerce backends (Shopify API, custom storefronts).
-* **Automated QA & Security:** Standardized schemas to validate AI-generated outputs before pushing to production catalogs.
-* **Extensible Architecture:** Easily add custom scripts, webhooks, and third-party API integrations.
+* **Evidence-Driven Engine:** Deterministic verification (`web_capture.py`, `scoring.py`) ensuring LLM outputs are backed by verifiable web quotes and data.
+* **Contract & Schema Validation:** Strict policy and threshold enforcement via standardized JSON contracts.
+* **Autonomous Research & VOC Mining:** Built-in pipelines for product discovery, competitor intelligence, and persona modeling.
+* **Zero-Dependency Core:** Pure Python 3.11+ architecture backed by a comprehensive 239-unit-test suite.
 
 ## 🛠️ Architecture Overview
 
-* `/src` - Core modules, API handlers, and workflow orchestration.
-* `/scripts` - Automation utilities and data processing pipelines.
-* `/config` - Environment templates and schema definitions.
+* `/engine` — Core verification engine, autonomous research pipelines, web capture, and scoring modules.
+* `/contracts` — JSON schemas, research policies, source registries, and validation thresholds.
+* `/research` — Playbooks and target persona definitions.
+* `/tests` — Comprehensive unit and integration test suite (239 passing tests).
+* `ecom.py` — Unified CLI entrypoint for running pipelines, audits, and test suites (`python3 ecom.py test`).
 
-## 🤝 Contributing & Roadmap
+## ⚡ Quick Start
 
-We recently transitioned Ecom OS from an internal proprietary tool into a public open-source repository to empower independent developers and small merchants. 
-
-**Current Roadmap:**
-- [ ] Standardize plugin architecture for community contributors.
-- [ ] Implement automated PR security checks and schema validation via OpenAI Codex.
-- [ ] Expand documentation and quick-start boilerplate templates.
-
-Pull requests, bug reports, and feature discussions are welcome in the **Issues** tab!
-
-## 📄 License
-Distributed under the MIT License. See `LICENSE` for more information.
+```bash
+# Run the verification test suite (239 tests)
+python3 ecom.py test
